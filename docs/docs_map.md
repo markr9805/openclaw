@@ -1363,6 +1363,7 @@ Do not edit it by hand; run `pnpm docs:map:gen`.
   - H2: Safe startup
   - H2: Operations and approval
   - H2: Setup bootstrap
+  - H2: Connect channels
   - H2: Model-Assisted Planner
   - H2: Switching to an agent
   - H2: Message rescue mode
@@ -8740,7 +8741,7 @@ Do not edit it by hand; run `pnpm docs:map:gen`.
 
 - Route: /start/onboarding-overview
 - Headings:
-  - H2: Which path should I use?
+  - H2: Which surface am I in?
   - H2: What onboarding configures
   - H2: CLI onboarding
   - H2: macOS app onboarding
