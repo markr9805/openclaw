@@ -988,6 +988,11 @@ export function renderTopbarThemeModeToggle(state: AppViewState) {
   `;
 }
 
+/**
+ * Sidebar footer status dot. The footer intentionally shows only live
+ * connection state; the gateway version lives in Settings (Quick Settings
+ * footer) instead of persistent chrome.
+ */
 export function renderSidebarConnectionStatus(state: AppViewState) {
   const label = state.connected ? t("common.online") : t("common.offline");
   const toneClass = state.connected
@@ -996,7 +1001,7 @@ export function renderSidebarConnectionStatus(state: AppViewState) {
 
   return html`
     <span
-      class="sidebar-version__status ${toneClass}"
+      class="sidebar-status__dot ${toneClass}"
       role="img"
       aria-live="polite"
       aria-label=${t("chat.gatewayStatus", { status: label })}

@@ -1908,6 +1908,7 @@ async function agentCommandInternal(
           });
 
           let fallbackAttemptIndex = 0;
+        const fallbackRuntimeState: { originRuntime?: "cli" | "embedded" } = {};
           attemptLifecycleState.currentTurnUserMessagePersisted = false;
           const fallbackResult = await runWithModelFallback<AgentAttemptResult>({
             cfg,
@@ -2024,6 +2025,7 @@ async function agentCommandInternal(
                 sessionHasHistory:
                   !isNewSession ||
                   (await attemptExecutionRuntime.sessionFileHasContent(attemptSessionFile)),
+                fallbackRuntimeState,
                 suppressPromptPersistenceOnRetry:
                   suppressUserTurnPersistence ||
                   userTurnTranscriptRecorder.hasPersisted() ||
